@@ -40,3 +40,7 @@ en:
         name: "Name"
         description: "Description"
         breed_count: "Breeds"
+  simple_form:
+    labels:
+      zoo:
+        image: "Image"
