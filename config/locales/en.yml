@@ -20,4 +20,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  table:
+    actions:
+      delete:
+        confirm: "Are you sure?"
+    header:
+      defaults:
+        actions: "Actions"
+      zoo:
+        name: "Name"
+        description: "Description"

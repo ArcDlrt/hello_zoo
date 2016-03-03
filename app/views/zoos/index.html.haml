@@ -1,3 +1,21 @@
-- @zoos.each do |zoo|
-  .zoo
-    = zoo.name
+.row
+  .col-md-3.right
+    = link_to 'New zoo', new_zoo_path, class: 'btn btn-primary'
+.row
+  .col-md-12
+    %table.table.table-striped
+      %thead
+        %tr
+          %th= t 'table.header.zoo.name'
+          %th= t 'table.header.zoo.description'
+          %th= t 'table.header.defaults.actions'
+      %tbody
+        - @zoos.each do |zoo|
+          %tr
+            %td= zoo.name
+            %td= zoo.description
+            %td
+              = link_to edit_zoo_path(zoo), class: 'action' do
+                %span.glyphicon.glyphicon-pencil
+              = link_to zoo_path(zoo), class: 'action', method: :delete, data: { confirm: t('table.actions.delete.confirm') } do
+                %span.glyphicon.glyphicon-trash
