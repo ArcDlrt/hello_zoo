@@ -26,3 +26,12 @@ en:
     labels:
       zoo:
         image: "Image"
+      breed:
+        name: "Name"
+  header:
+    dropdown:
+      title: "Menu"
+      home: "Home"
+      language: "Language"
+      english: "English"
+      spanish: "Spanish"

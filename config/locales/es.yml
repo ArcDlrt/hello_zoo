@@ -29,6 +29,8 @@ es:
     labels:
       zoo:
         image: "Imagen"
+      breed:
+        name: "Nombre"
   activerecord:
     errors:
       models:
@@ -46,3 +48,14 @@ es:
               blank: "No puede estar vacio"
             name:
               blank: "No puede estar vacio"
+    models:
+      animal: "Animal"
+      breed: "Especie"
+      zoo: "Zoológico"
+  header:
+    dropdown:
+      title: "Menú"
+      home: "Inicio"
+      language: "Idioma"
+      english: "Ingles"
+      spanish: "Español"

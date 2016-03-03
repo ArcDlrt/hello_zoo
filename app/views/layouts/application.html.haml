@@ -8,14 +8,11 @@
     = csrf_meta_tags
   %body
     %header
-      %h2= link_to t('app.title'), root_path
+      = render 'layouts/header'
 
     = render 'shared/flashes'
 
     #body-content
       = yield
-
-    %footer
-      hello zoo inc
 
     = content_for :javascript_includes

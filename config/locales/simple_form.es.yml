@@ -16,6 +16,9 @@ es:
         description: "Descripción"
         name:        "Nombre"
       zoo:
+        breed_count:
+          one: "Tenemos una especie"
+          other: "Tenemos %{count} especies"
         description: "Descripción"
         name:        "Nombre"
     prompts:
