@@ -30,3 +30,7 @@ en:
       zoo:
         name: "Name"
         description: "Description"
+  form:
+    submit:
+      create: "Create"
+      update: "Update"

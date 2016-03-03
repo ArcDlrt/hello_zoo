@@ -1,0 +1,19 @@
+= simple_form_for @zoo, html: { class: 'form-horizontal' }, defaults: { label: false } do |f|
+  %h3 Zoo details
+  .form-group
+    %label.col-sm-3.control-label= t 'simple_form.labels.zoo.name'
+    .col-sm-7
+      = f.input :name, input_html: { class: 'form-control' }
+  .form-group
+    %label.col-sm-3.control-label= t 'simple_form.labels.zoo.description'
+    .col-sm-7
+      = f.input :description, input_html: { class: 'form-control' }
+  %h3 Animals
+  #animals
+    = f.simple_fields_for :animals do |animal|
+      = render 'zoos/fields/animal_fields', f: animal
+    .links
+      = link_to_add_association 'Add animal', f, :animals, partial: 'zoos/fields/animal_fields'
+  .form-group
+    .col-sm-offset-3.col-sm-7
+      = f.submit t("form.submit.#{form_action}"), class: 'btn btn-primary'
