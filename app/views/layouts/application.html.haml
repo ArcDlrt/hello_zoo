@@ -7,4 +7,13 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = yield
+    %header
+      %h2= link_to 'Zoos of the World', root_path
+
+    = render 'shared/flashes'
+
+    #body-content
+      = yield
+
+    %footer
+      hello zoo inc

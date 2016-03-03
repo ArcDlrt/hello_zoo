@@ -1,0 +1,6 @@
+#flash
+  - flash.each do |key, value|
+    %div{ id: "flash_#{key}", class: "alert alert-#{alert_class(key)} alert-dismissible" }
+      %button.close{ data: { dismiss: 'alert' } }
+        %span{ 'aria-hidden' => true } &times;
+      = value
