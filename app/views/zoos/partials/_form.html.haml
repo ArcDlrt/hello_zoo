@@ -1,3 +1,6 @@
+= content_for :javascript_includes do
+  = javascript_include_tag 'models/zoos'
+
 = simple_form_for @zoo, html: { class: 'form-horizontal' }, defaults: { label: false } do |f|
   %h3 Zoo details
   #preview-container.form-group
@@ -27,6 +30,6 @@
     .col-sm-offset-3.col-sm-7
       = f.submit t("form.submit.#{form_action}"), class: 'btn btn-primary'
 
-- if form_action == 'update'
+- if form_action == 'update' && @zoo.image.present?
   :javascript
     $(function(){ showCurrentImage( "#{@zoo.image.url}" ) })
