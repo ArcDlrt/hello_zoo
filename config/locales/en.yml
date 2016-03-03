@@ -35,3 +35,6 @@ en:
       language: "Language"
       english: "English"
       spanish: "Spanish"
+  modal:
+    button:
+      close: "Close"

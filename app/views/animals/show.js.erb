@@ -1,0 +1,3 @@
+$('#animal-modal-label').text('<%= @animal.name %>');
+$('#animal-body').html('<%= escape_javascript render "animals/show"%>');
+$('#animal-modal').modal();

@@ -8,6 +8,6 @@
     %tbody
       - @zoo.animals.by_breed.each do |animal|
         %tr
-          %td= animal.name
+          %td= link_to animal.name, animal_path(animal), remote: true
           %td= animal.breed_name
           %td= animal.description
