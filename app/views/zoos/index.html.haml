@@ -1,6 +1,8 @@
 .row
   .col-sm-3
-    = link_to 'New zoo', new_zoo_path, class: 'btn btn-primary'
+    = link_to new_zoo_path, class: 'btn btn-primary btn-submit' do
+      %span.glyphicon.glyphicon-plus
+      = t 'model.zoo'
 
 = render 'shared/paginator', collection: @zoos
 

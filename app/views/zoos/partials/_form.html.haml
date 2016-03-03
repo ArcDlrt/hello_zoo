@@ -2,7 +2,7 @@
   = javascript_include_tag 'models/zoos'
 
 = simple_form_for @zoo, html: { class: 'form-horizontal' }, defaults: { label: false } do |f|
-  %h3 Zoo details
+  %h3= t 'table.title.zoo'
   #preview-container.form-group
     .col-sm-offset-3
       %img{ id: 'preview', alt: 'image' }
@@ -18,7 +18,7 @@
     %label.col-sm-3.control-label= t 'simple_form.labels.zoo.description'
     .col-sm-7
       = f.input :description, input_html: { class: 'form-control' }
-  %h3 Animals
+  %h3= t 'table.title.animals'
   #animals
     #animals-wrapper
       = f.simple_fields_for :animals do |animal|

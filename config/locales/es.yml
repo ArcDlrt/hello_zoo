@@ -1,0 +1,48 @@
+es:
+  app:
+    title: 'Zoológicos del mundo'
+  form:
+    add_association: "Agregar %{model}"
+    submit:
+      create: "Crear"
+      update: "Actualizar"
+    remove_association: "Remover %{model}"
+  model:
+    animal: "Animal"
+    breed: "Especie"
+    zoo: "Zoológico"
+  table:
+    actions:
+      delete:
+        confirm: "¿Estas seguro?"
+    header:
+      defaults:
+        actions: "Acciones"
+      zoo:
+        name: "Nombre"
+        description: "Descripción"
+        breed_count: "Especies"
+    title:
+      animals: "Animales"
+      zoo: "Detalles del zoológico"
+  simple_form:
+    labels:
+      zoo:
+        image: "Imagen"
+  activerecord:
+    errors:
+      models:
+        animal:
+          attributes:
+            breed_id:
+              blank: "No puede estar vacio"
+            description:
+              blank: "No puede estar vacio"
+            name:
+              blank: "No puede estar vacio"
+        zoo:
+          attributes:
+            description:
+              blank: "No puede estar vacio"
+            name:
+              blank: "No puede estar vacio"
