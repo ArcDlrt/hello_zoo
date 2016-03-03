@@ -10,11 +10,15 @@ class ZoosController < ApplicationController
     respond_with @zoo, location: zoos_path
   end
 
+  def show
+    @zoo = Zoo.find(params[:id])
+    respond_with @zoo
+  end
+
   def index
     @zoos = Zoo.all
     respond_with @zoos
   end
-
 
   def edit
     @zoo = Zoo.find(params[:id])

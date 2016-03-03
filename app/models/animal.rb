@@ -5,4 +5,10 @@ class Animal < ActiveRecord::Base
 
   validates :name, :description, :breed_id, presence: true
 
+  scope :by_breed, -> { includes(:breed).order('breeds.name ASC') }
+
+  def breed_name
+    try(:breed).try(:name)
+  end
+
 end

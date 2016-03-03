@@ -1,0 +1,17 @@
+.row
+  .col-sm-6.col-sm-offset-3
+    %h2 Zoos catalog
+.row
+  .col-md-12
+    %table.table.table-striped
+      %thead
+        %tr
+          %th= t 'table.header.zoo.name'
+          %th= t 'table.header.zoo.description'
+          %th= t 'table.header.zoo.breed_count'
+      %tbody
+        - @zoos.each do |zoo|
+          %tr
+            %td= link_to zoo.name, zoo_path(zoo)
+            %td= zoo.description
+            %td= zoo.breeds_quantity

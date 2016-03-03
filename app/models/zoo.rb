@@ -7,4 +7,8 @@ class Zoo < ActiveRecord::Base
 
   validates :name, :description, presence: true
 
+  def breeds_quantity
+    breeds.count
+  end
+
 end
