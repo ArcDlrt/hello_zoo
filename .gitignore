@@ -25,3 +25,6 @@
 
 #Byebug
 .byebug_history
+
+#carrierwave
+public/uploads/
