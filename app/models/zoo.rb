@@ -7,6 +7,8 @@ class Zoo < ActiveRecord::Base
 
   validates :name, :description, presence: true
 
+  mount_uploader :image, ImageUploader
+
   def breeds_quantity
     breeds.count
   end

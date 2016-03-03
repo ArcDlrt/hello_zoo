@@ -40,7 +40,7 @@ class ZoosController < ApplicationController
   private
 
   def zoo_params
-    params.require(:zoo).permit(:name, :description, animals_attributes: [:id, :name, :description, :breed_id, :_destroy])
+    params.require(:zoo).permit(:name, :description, :image, animals_attributes: [:id, :name, :description, :breed_id, :_destroy])
   end
 
 end
