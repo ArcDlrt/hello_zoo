@@ -1,0 +1,9 @@
+= simple_form_for @breed, html: { class: 'form-horizontal' }, defaults: { label: false } do |f|
+  %h3 Breed
+  .form-group
+    %label.col-sm-3.control-label= t 'simple_form.labels.zoo.name'
+    .col-sm-7
+      = f.input :name, input_html: { class: 'form-control' }
+  .form-group
+    .col-sm-offset-3.col-sm-7
+      = f.submit 'Create', class: 'btn btn-primary'

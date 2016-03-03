@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :zoos,    except: [:show]
-  resources :species, except: [:show]
+  resources :zoos,   except: [:show]
+  resources :breeds, except: [:show]
 
   root 'zoos#index'
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,7 +1,7 @@
 class Zoo < ActiveRecord::Base
 
   has_many :animals, dependent: :destroy
-  has_many :species, through: :animals
+  has_many :breeds, through: :animals
 
   accepts_nested_attributes_for :animals, reject_if: :all_blank, allow_destroy: true
 

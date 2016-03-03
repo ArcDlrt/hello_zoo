@@ -1,4 +1,4 @@
-class Species < ActiveRecord::Base
+class Breed < ActiveRecord::Base
 
   has_many :animals
   has_many :zoos, through: :animals
