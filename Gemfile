@@ -19,6 +19,7 @@ gem 'responders'
 
 gem 'simple_form'
 gem 'cocoon'
+gem 'kaminari'
 
 gem 'carrierwave'
 gem 'rmagick'

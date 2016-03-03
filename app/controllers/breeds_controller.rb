@@ -11,7 +11,7 @@ class BreedsController < ApplicationController
   end
 
   def index
-    @breeds = Breed.all
+    @breeds = Breed.page(params[:page])
     respond_with @breeds
   end
 
