@@ -21,6 +21,7 @@
 
 en:
   form:
+    add_association: "Add %{model}"
     submit:
       create: "Create"
       update: "Update"

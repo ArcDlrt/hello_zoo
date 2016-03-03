@@ -13,7 +13,9 @@
     = f.simple_fields_for :animals do |animal|
       = render 'zoos/fields/animal_fields', f: animal
     .links
-      = link_to_add_association 'Add animal', f, :animals, partial: 'zoos/fields/animal_fields'
+      = link_to_add_association f, :animals, partial: 'zoos/fields/animal_fields' do
+        %span.glyphicon.glyphicon-plus
+          = t('form.add_association', model: t('model.animal'))
   .form-group
     .col-sm-offset-3.col-sm-7
       = f.submit t("form.submit.#{form_action}"), class: 'btn btn-primary'
