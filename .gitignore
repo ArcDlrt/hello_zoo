@@ -22,3 +22,6 @@
 
 # Mac
 .DS_Store
+
+#Byebug
+.byebug_history
