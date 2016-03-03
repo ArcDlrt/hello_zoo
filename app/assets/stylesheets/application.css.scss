@@ -34,12 +34,13 @@ footer{
   margin: 0 4px;
 }
 
-.links{
-  height: 25px
+.links {
+  margin: 10px 0 5px;
+  min-height: 50px;
+  padding: 5px 0;
 }
 
 .links a{
-  float: right;
   line-height: 25px;
 }
 
@@ -58,4 +59,14 @@ footer{
 
 .table-with-image td{
   line-height: 25px !important;
+}
+
+#animals-wrapper{
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.btn-submit{
+  margin-top: 15px;
+  width: 100%;
 }
