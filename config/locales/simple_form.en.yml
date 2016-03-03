@@ -11,9 +11,15 @@ en:
     error_notification:
       default_message: "Please review the problems below:"
     labels:
-      zoo:
-        name: "Name"
+      animal:
+        breed:       "Breed"
         description: "Description"
+        name:        "Name"
+      zoo:
+        description: "Description"
+        name:        "Name"
+    prompts:
+      breed: "Select a breed"
 
     # Examples
     # labels:
