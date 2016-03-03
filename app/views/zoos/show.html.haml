@@ -1,0 +1,13 @@
+.well-lg
+  %h2= @zoo.name
+
+  .row
+    .col-sm-3
+      Description
+    .col-sm-4
+      = @zoo.description
+  .row
+    .col-sm-6
+      = "We have #{@zoo.breeds_quantity} breeds"
+
+= render 'zoos/partials/animals'

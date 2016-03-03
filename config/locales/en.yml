@@ -39,3 +39,4 @@ en:
       zoo:
         name: "Name"
         description: "Description"
+        breed_count: "Breeds"

@@ -1,0 +1,13 @@
+.well-lg
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th= "Name"
+        %th= "Breed"
+        %th= "Description"
+    %tbody
+      - @zoo.animals.by_breed.each do |animal|
+        %tr
+          %td= animal.name
+          %td= animal.breed_name
+          %td= animal.description
