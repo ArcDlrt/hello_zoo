@@ -25,13 +25,14 @@ else
   breeds = Breed.all
 end
 
+image = open("#{Rails.root}/public/sample_zoo.jpg")
 zoos_arr= [
-  { name: 'LA Zoo', description: 'We have the animals', image: open('public/sample_zoo.jpg') },
-  { name: 'Mexico City', description: 'Free tlacoyos for the children', image: open('public/sample_zoo.jpg')  },
-  { name: 'New Heaven', description: 'Come and see', image: open('public/sample_zoo.jpg')  },
-  { name: 'Guadalajara', description: 'Great view to the cliff', image: open('public/sample_zoo.jpg')  },
-  { name: 'Dubai', description: 'You lack money', image: open('public/sample_zoo.jpg')  },
-  { name: 'San Diego', description: 'The best', image: open('public/sample_zoo.jpg')  }
+  { name: 'LA Zoo', description: 'We have the animals', image: image },
+  { name: 'Mexico City', description: 'Free tlacoyos for the children', image: image },
+  { name: 'New Heaven', description: 'Come and see', image: image },
+  { name: 'Guadalajara', description: 'Great view to the cliff', image: image },
+  { name: 'Dubai', description: 'You lack money', image: image },
+  { name: 'San Diego', description: 'The best', image: image }
 ]
 
 zoos = Zoo.create(zoos_arr)
