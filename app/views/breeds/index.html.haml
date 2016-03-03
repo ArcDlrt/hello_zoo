@@ -1,6 +1,9 @@
 .row
   .col-md-3.right
     = link_to 'New breed', new_breed_path, class: 'btn btn-primary'
+
+= render 'shared/paginator', collection: @breeds
+
 .row
   .col-md-12
     %table.table.table-striped
@@ -17,3 +20,5 @@
                 %span.glyphicon.glyphicon-pencil
               = link_to breed_path(breed), class: 'action', method: :delete, data: { confirm: t('table.actions.delete.confirm') } do
                 %span.glyphicon.glyphicon-trash
+
+= render 'shared/paginator', collection: @breeds

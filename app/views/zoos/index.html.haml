@@ -1,8 +1,11 @@
 .row
-  .col-md-3.right
+  .col-sm-3
     = link_to 'New zoo', new_zoo_path, class: 'btn btn-primary'
+
+= render 'shared/paginator', collection: @zoos
+
 .row
-  .col-md-12
+  .col-sm-12
     %table.table.table-striped.table-with-image
       %thead
         %tr
@@ -21,3 +24,5 @@
                 %span.glyphicon.glyphicon-pencil
               = link_to zoo_path(zoo), class: 'action', method: :delete, data: { confirm: t('table.actions.delete.confirm') } do
                 %span.glyphicon.glyphicon-trash
+
+= render 'shared/paginator', collection: @zoos

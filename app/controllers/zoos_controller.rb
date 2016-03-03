@@ -16,7 +16,7 @@ class ZoosController < ApplicationController
   end
 
   def index
-    @zoos = Zoo.all
+    @zoos = Zoo.page(params[:page])
     respond_with @zoos
   end
 
