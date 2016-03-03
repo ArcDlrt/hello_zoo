@@ -1,0 +1,17 @@
+.row
+  .col-sm-4
+    %h2= link_to t('app.title'), root_path
+  .col-sm-2.col-sm-offset-5
+    .dropdown
+      %button.btn.btn-primary.btn-wide.dropdown-toggle{ data: { toggle: 'dropdown' } }
+        = t('header.dropdown.title')
+        %span.caret
+      %ul.dropdown-menu
+        %li= link_to t('header.dropdown.home'), root_path
+        %li= link_to t('model.zoo'), zoos_path
+        %li= link_to t('model.breed'), breeds_path
+        %li.dropdown-submenu
+          %a{ 'tabindex' => '-1' }= t 'header.dropdown.language'
+          %ul.dropdown-menu
+            %li= link_to t('header.dropdown.english'), language_path(locale: 'en')
+            %li= link_to t('header.dropdown.spanish'), language_path(locale: 'es')
