@@ -10,7 +10,7 @@ class Zoo < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
   def breeds_quantity
-    breeds.count
+    breeds.distinct.count
   end
 
 end
