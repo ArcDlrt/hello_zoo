@@ -1,6 +1,8 @@
 .row
   .col-md-3.right
-    = link_to 'New breed', new_breed_path, class: 'btn btn-primary'
+    = link_to  new_breed_path, class: 'btn btn-primary' do
+      %span.glyphicon.glyphicon-plus
+      = t 'model.breed'
 
 = render 'shared/paginator', collection: @breeds
 

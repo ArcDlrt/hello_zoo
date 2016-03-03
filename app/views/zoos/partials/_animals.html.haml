@@ -2,12 +2,12 @@
   %table.table.table-bordered
     %thead
       %tr
-        %th= "Name"
-        %th= "Breed"
-        %th= "Description"
+        %th= t 'simple_form.labels.animal.name'
+        %th= t 'simple_form.labels.animal.breed'
+        %th= t 'simple_form.labels.animal.description'
     %tbody
       - @zoo.animals.by_breed.each do |animal|
         %tr
-          %td= animal.name
+          %td= link_to animal.name, animal_path(animal), remote: true
           %td= animal.breed_name
           %td= animal.description
