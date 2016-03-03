@@ -20,6 +20,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  form:
+    add_association: "Add %{model}"
+    submit:
+      create: "Create"
+      update: "Update"
+    remove_association: "Remove %{model}"
+  model:
+    breed: "breed"
+    animal: "animal"
   table:
     actions:
       delete:

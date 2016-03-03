@@ -1,0 +1,19 @@
+.row
+  .col-md-3.right
+    = link_to 'New breed', new_breed_path, class: 'btn btn-primary'
+.row
+  .col-md-12
+    %table.table.table-striped
+      %thead
+        %tr
+          %th= t 'table.header.zoo.name'
+          %th= t 'table.header.defaults.actions'
+      %tbody
+        - @breeds.each do |breed|
+          %tr
+            %td= breed.name
+            %td
+              = link_to edit_breed_path(breed), class: 'action' do
+                %span.glyphicon.glyphicon-pencil
+              = link_to breed_path(breed), class: 'action', method: :delete, data: { confirm: t('table.actions.delete.confirm') } do
+                %span.glyphicon.glyphicon-trash
