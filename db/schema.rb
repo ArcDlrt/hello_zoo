@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303111053) do
+ActiveRecord::Schema.define(version: 20160303120629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,9 +22,19 @@ ActiveRecord::Schema.define(version: 20160303111053) do
     t.integer  "zoo_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.integer  "species_id"
   end
 
+  add_index "animals", ["species_id"], name: "index_animals_on_species_id", using: :btree
   add_index "animals", ["zoo_id"], name: "index_animals_on_zoo_id", using: :btree
+
+  create_table "species", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "species", ["name"], name: "index_species_on_name", using: :btree
 
   create_table "zoos", force: :cascade do |t|
     t.string   "name",        limit: 100
