@@ -1,12 +1,10 @@
 class Api::V1::ZoosController < Api::BaseController
   def show
-    zoo = Zoo.find_by_id(params[:id])
-
-    render json: zoo
+    render json: resource
   end
 
   def index
-    zoos = Zoo.all
+    zoos = Zoo.page(params[:page])
 
     render json: zoos
   end
@@ -18,19 +16,15 @@ class Api::V1::ZoosController < Api::BaseController
   end
 
   def update
-    zoo = Zoo.find_by_id params[:id]
-
-    if zoo
-      render json: zoo.update_attributes(zoo_params) ? zoo : error_response(zoo)
+    if resource
+      render json: resource.update_attributes(zoo_params) ? resource : error_response(resource)
     else
-      render json: zoo
+      render json: resource
     end
   end
 
   def destroy
-    zoo = Zoo.find_by_id params[:id]
-
-    if zoo && zoo.destroy
+    if resource && resource.destroy
       render json: { }
     else
       not_found
