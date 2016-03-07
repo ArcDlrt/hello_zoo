@@ -1,5 +1,4 @@
 class ZoosController < ApplicationController
-
   def new
     @zoo = Zoo.new
     respond_with @zoo
@@ -42,5 +41,4 @@ class ZoosController < ApplicationController
   def zoo_params
     params.require(:zoo).permit(:name, :description, :image, animals_attributes: [:id, :name, :description, :breed_id, :_destroy])
   end
-
 end

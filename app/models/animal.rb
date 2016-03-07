@@ -1,5 +1,4 @@
 class Animal < ActiveRecord::Base
-
   belongs_to :zoo
   belongs_to :breed
 
@@ -10,5 +9,4 @@ class Animal < ActiveRecord::Base
   def breed_name
     try(:breed).try(:name)
   end
-
 end
