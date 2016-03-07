@@ -1,14 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# Create breeds
 
-#Breeds
-
-breeds_arr = [
+breeds_collection = [
   { name: 'Fish' },
   { name: 'Arachnid' },
   { name: 'Bug' },
@@ -17,16 +9,15 @@ breeds_arr = [
   { name: 'Feline' },
   { name: 'Canine' },
   { name: 'Crustacean' },
-  { name: 'Fish' }]
+  { name: 'Fish' }
+]
 
-if Breed.count <= 0
-  breeds = Breed.create(breeds_arr)
-else
-  breeds = Breed.all
-end
+breeds = Breed.create breeds_collection
+
+# Create zoos
 
 image = open("#{Rails.root}/public/sample_zoo.jpg")
-zoos_arr= [
+zoos_collection= [
   { name: 'LA Zoo', description: 'We have the animals', image: image },
   { name: 'Mexico City', description: 'Free tlacoyos for the children', image: image },
   { name: 'New Heaven', description: 'Come and see', image: image },
@@ -35,21 +26,20 @@ zoos_arr= [
   { name: 'San Diego', description: 'The best', image: image }
 ]
 
-zoos = Zoo.create(zoos_arr)
+zoos = Zoo.create zoos_collection
 
+# Create zoo's animals
 
-animals_arr = %w(Lion Seal Duck Swan Elephant Giraffe Bear Ant Dragon)
+animals_collection = [
+  { name: 'Lion', description: 'Wild animal', breed: breeds[0] },
+  { name: 'Seal', description: 'Wild animal', breed: breeds[2] },
+  { name: 'Duck', description: 'Wild animal', breed: breeds[5] },
+  { name: 'Swan', description: 'Wild animal', breed: breeds[1] },
+  { name: 'Elephant', description: 'Wild animal', breed: breeds[3] },
+  { name: 'Giraffe', description: 'Wild animal', breed: breeds[2] },
+  { name: 'Bear', description: 'Wild animal', breed: breeds[0] },
+  { name: 'Ant', description: 'Wild animal', breed: breeds[4] },
+  { name: 'Dragon', description: 'Wild animal', breed: breeds[0] }
+]
 
-r = Random.new
-r_max = animals_arr.size - 1
-r_max_breed = breeds.size - 1
-
-zoos.each do |zoo|
-  zoo_animals = (0..25).map do |i|
-    { name: "#{animals_arr[r.rand(r_max)]}", description: 'Wild animal',  breed: breeds[r.rand(r_max_breed)]}
-  end
-
-  zoo.animals.create zoo_animals
-end
-
-
+zoos.each { |zoo|  zoo.animals.create animals_collection }
