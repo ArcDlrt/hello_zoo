@@ -1,5 +1,4 @@
 class BreedsController < ApplicationController
-
   def new
     @breed = Breed.new
     respond_with @breed

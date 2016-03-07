@@ -5,7 +5,7 @@
   %h3= t 'table.title.zoo'
   #preview-container.form-group
     .col-sm-offset-3
-      %img{ id: 'preview', alt: 'image' }
+      = preview_image_tag @zoo.image
   .form-group
     %label.col-sm-3.control-label= t 'simple_form.labels.zoo.image'
     .col-sm-7
@@ -30,7 +30,3 @@
   .form-group
     .col-sm-offset-3.col-sm-7
       = f.submit t("form.submit.#{form_action}"), class: 'btn btn-primary btn-submit'
-
-- if form_action == 'update' && @zoo.image.present?
-  :javascript
-    $(function(){ showCurrentImage( "#{@zoo.image.url}" ) })

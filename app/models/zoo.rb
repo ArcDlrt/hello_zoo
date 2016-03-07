@@ -1,5 +1,4 @@
 class Zoo < ActiveRecord::Base
-
   has_many :animals, dependent: :destroy
   has_many :breeds, through: :animals
 
@@ -12,5 +11,4 @@ class Zoo < ActiveRecord::Base
   def breeds_quantity
     breeds.distinct.count
   end
-
 end

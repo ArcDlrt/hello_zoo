@@ -6,5 +6,4 @@ class AnimalsController < ApplicationController
 
     respond_with @animal
   end
-
 end
